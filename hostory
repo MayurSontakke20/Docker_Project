@@ -1,0 +1,59 @@
+yum install docker -y
+systemctl start docker
+systemctl status docker
+docker swarm init --advertise-addr 172.31.35.58
+docker node ls
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+amazon-linux-extras install java-openjdk11 -y
+yum install git maven jenkins -y
+systemctl start jenkins.service
+systemctl status jenkins.service
+vim Dockerfile
+vim index.html
+docker build -t phonepaytrain:v1 .
+vim index.html
+docker build -t phonepaymovie:v1 .
+docker images
+vim index.html
+docker build -t phonepayrecharge:v1 .
+docker images
+docker tag phonepayrecharge:v1 rahamshaik/phonepayrecharge:v1
+docker tag phonepaymovie:v1 rahamshaik/phonepaymovie:v1
+docker tag phonepaytrain:v1 rahamshaik/phonepaytrain:v1
+docker images
+docker login
+docker images
+docker push rahamshaik/phonepayrecharge
+docker push rahamshaik/phonepayrecharge:v1
+docker push rahamshaik/phonepaymovie:v1
+docker push rahamshaik/phonepaytrain:v1
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+docker-compose --version
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+docker-compose --version
+vim docker-compose.yml
+ll
+git .
+git init .
+git add *
+git commit -m "raham commits" *
+git remote add origin https://github.com/RAHAMSHAIK007/dockerproject.git
+git push origin master
+git status
+git log
+git push origin master
+yum remove git* -y
+yum install git -y
+chmod 777 /var/run/docker.sock
+systemctl reload-daemon
+systemctl daemon-reload
+systemctl restart docker
+docker stack ls
+docker stack ps phonepay
+docker images
+history
